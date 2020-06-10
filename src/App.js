@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import getGifs from "./services/getGifs";
+import ListOfGifs from "./components/ListOfGifs";
 
 export default function App() {
-    return (
-        <div>
-            <h1>Hola</h1>
-        </div>
-    )
+  const [gifs, setGifs] = useState([]);
+
+  useEffect(() => {
+    getGifs({ keyword: "money" }).then((gifs) => setGifs(gifs));
+  }, []);
+
+  return (
+    <div>
+      <h1>Gifú</h1>
+      <ListOfGifs gifs={gifs} />
+    </div>
+  );
 }
