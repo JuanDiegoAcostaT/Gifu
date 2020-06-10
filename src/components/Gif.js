@@ -1,12 +1,12 @@
 import React from "react";
+import './Gif.css'
+import { Link } from "@reach/router";
 
-export default function Gif({ title, url }) {
+export default function Gif({ title, url, id }) {
   return (
-    <div>
       <div className="gif">
-        <h4>{title}</h4>
+        <Link to={`#${id}`}><h4>{title}</h4></Link>
         <img src={url} alt={title} />
       </div>
-    </div>
   );
 }
