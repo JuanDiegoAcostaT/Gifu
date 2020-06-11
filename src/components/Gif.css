@@ -17,3 +17,15 @@
     text-decoration: none;
     color: whitesmoke;
 }
+
+.gif__details {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.gif__details span {
+    padding-top: 5px;
+}
