@@ -1,5 +1,16 @@
 .list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    column-count: 6;
+    column-gap: .5em;
+}
+
+@media (max-width : 600px) {
+    .list {
+        column-count: 3;
+    }
+}
+
+@media (max-width : 300px) {
+    .list {
+        column-count: 2;
+    }
 }

@@ -1,0 +1,27 @@
+.onlyGif {
+    display: flex;
+    flex-direction: column;
+}
+
+.gif__info{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top:100px;
+}
+
+.gif__info img {
+    width: 40%;
+}
+
+
+.gif__details {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.gif__details span {
+    padding-top: 5px;
+}

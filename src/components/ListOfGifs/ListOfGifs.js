@@ -1,21 +1,12 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import Gif from "../Gif/Gif";
-import getGifs from "../../services/getGifs";
 import './ListOfGifs.css'
+import useGifs from '../../hooks/useGifs'
 import LoadingSpinner from "../Spinner/LoadingSpinner";
 
 export default function ListOfGifs({ keyword }) {
 
-  const [gifs, setGifs] = useState([]);
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    setLoading(true)
-    getGifs({ keyword }).then((gifs) => {
-       setGifs(gifs)
-        setLoading(false)
-    });
-  }, [keyword]);
+  const { loading, gifs} = useGifs({keyword})
 
   if(loading) return <LoadingSpinner/>
   

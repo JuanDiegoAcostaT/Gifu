@@ -1,32 +1,15 @@
 .gif {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    display: inline-block;
     width: 100%;
-    border: 2px solid whitesmoke;
-    border-radius: 5px;
-    margin-top: 10px;
-
 }
 
 .gif img {
     object-fit: contain;
+    height: 100%;
+    width: 100%;
 }
 
 .gif a {
     text-decoration: none;
-    color: black;
-    background-color: whitesmoke;
-
-}
-.gif__details {
-    display: flex;
-    flex-direction: column;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-}
-
-.gif__details span {
-    padding-top: 5px;
+    color :white
 }

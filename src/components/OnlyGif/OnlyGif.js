@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "../Gif/Gif.css";
+import "./OnlyGif.css";
 
 const api_key = "vhMurxNjlCKesQlp88kAZIczkQZIahdU";
 
-export default function OnlyGif({id}) {
-
-
+export default function OnlyGif({ id }) {
   const API_URL = `https://api.giphy.com/v1/gifs/${id}?api_key=${api_key}`;
 
   const [OnlyGif, setOnlyGif] = useState([]);
@@ -22,15 +20,17 @@ export default function OnlyGif({id}) {
   return (
     <>
       {OnlyGif.map((Gif) => (
-        <div className="gif" key={Gif.id}>
+        <div className="onlyGif" key={Gif.id}>
           <h3>{Gif.title}</h3>
-          <img src={Gif.images.downsized_medium.url} alt={Gif.title} />
-          <div className="gif__details">
-            <span>{Gif.rating}</span>
-            <span>{Gif.id}</span>
-            <span>{Gif.bitly_gif_url}</span>
-            <span>{Gif.import_datetime}</span>
-            <span>{Gif.slug}</span>
+          <div className="gif__info">
+            <img src={Gif.images.downsized_medium.url} alt={Gif.title} />
+            <div className="gif__details">
+              <span>{Gif.rating}</span>
+              <span>{Gif.id}</span>
+              <span>{Gif.bitly_gif_url}</span>
+              <span>{Gif.import_datetime}</span>
+              <span>{Gif.slug}</span>
+            </div>
           </div>
         </div>
       ))}

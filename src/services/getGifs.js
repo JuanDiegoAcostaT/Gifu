@@ -1,6 +1,6 @@
 const api_key = "vhMurxNjlCKesQlp88kAZIczkQZIahdU";
 
-export default function getGifs({ keyword = "drugs" } = {}) {
+export default function getGifs({ keyword } = {}) {
   const API_URL = `https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${keyword}&limit=30&offset=0&rating=G&lang=en`;
 
   return fetch(API_URL)
