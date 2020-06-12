@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
-import Gif from "./Gif";
-import getGifs from "../services/getGifs";
+import Gif from "../Gif/Gif";
+import getGifs from "../../services/getGifs";
 import './ListOfGifs.css'
-import LoadingSpinner from "./LoadingSpinner";
+import LoadingSpinner from "../Spinner/LoadingSpinner";
 
 export default function ListOfGifs({ keyword }) {
 

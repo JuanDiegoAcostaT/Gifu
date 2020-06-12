@@ -4,3 +4,24 @@ body {
     text-align: center;
 }
 
+.main__title {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+li a {
+    text-decoration: none;
+}
+
+.gif__popular {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.gif__popular a {
+    color: aqua;
+}

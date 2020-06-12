@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from "react";
-import ListOfGifs from "./components/ListOfGifs";
-import OnlyGif from './components/OnlyGif'
+import React from "react";
+import Home from './pages/Home'
+import Detail from './pages/Detail'
+import SearchResults from './pages/SearchResults'
 import { Router, Link } from "@reach/router";
 
 export default function App() {
   return (
     <>
-      <h1>Gifú</h1>
+      <Link to='/'>
+       <h1 className="main__title" >Gifú</h1>
+      </Link>
       <Router>
-        <ListOfGifs exact path="/" keyword="Drugs" />
-        <OnlyGif path='/gif/:id' />
+        <Home exact path ="/"/>
+        <SearchResults exact path="/search/:keyword"  />
+        <Detail path='/gif/:id'/>
       </Router>
     </>
   );
