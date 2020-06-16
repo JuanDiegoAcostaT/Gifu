@@ -25,3 +25,16 @@
 .gif__details span {
     padding-top: 5px;
 }
+
+@media (max-width : 300px) {
+    .gif__info {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .gif__details {
+        text-align: center;
+    }
+    
+}

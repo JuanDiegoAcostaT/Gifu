@@ -1,6 +1,7 @@
 .list {
     column-count: 6;
     column-gap: .5em;
+    min-height: 100vh;
 }
 
 @media (max-width : 600px) {
