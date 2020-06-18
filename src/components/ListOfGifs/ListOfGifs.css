@@ -1,17 +1,32 @@
-.list {
-    column-count: 6;
-    column-gap: .5em;
+  
+:root {
+    --gridList-column: 250px;
+    --gridList-rows: 250px;
+    --gridList-gap: 6px;
+  }
+  
+  .list {
+    margin: 15px;
+    display: grid;
     min-height: 100vh;
-}
-
-@media (max-width : 600px) {
-    .list {
-        column-count: 3;
+    grid-template-columns: repeat(auto-fit, minmax(var(--gridList-column), 1fr));
+    grid-auto-rows: var(--gridList-rows);
+    grid-auto-flow: row dense;
+    grid-gap: var(--gridList-gap, 6px);
+    gap: var(--gridList-gap, 6px);
+    align-items: center;
+  }
+  
+  @media screen and (min-width: 37.5rem) {
+    :root {
+      --gridList-column: 180px;
+      --gridList-rows: 200px;
     }
-}
-
-@media (max-width : 300px) {
-    .list {
-        column-count: 2;
+  }
+  
+  @media screen and (min-width: 60rem) {
+    :root {
+      --gridList-column: 100px;
+      --gridList-rows: 210px;
     }
 }

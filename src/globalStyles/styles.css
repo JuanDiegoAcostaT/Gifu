@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
 body {
-    background-color: black;
+    background-color: rgb(12, 12, 12);
     color: white;
     text-align: center;
     font-family: 'Balsamiq Sans', cursive;
@@ -76,12 +76,23 @@ li a {
     margin: 50px 25% ;    
 }
 
-@media (max-width : 600px) {
+@media (max-width : 900px) {
     .gifs__container {
         flex-direction: column;
         text-align: center;
     }
+    .gifs__img {
+        flex-direction: column;
+        padding:0px;
+    }
+    
 
+    .gifs__trends {
+        padding:0px;
+    }
+
+}
+@media (max-width : 600px) {
     .gifs__img {
         flex-direction: column;
         padding:0px;
