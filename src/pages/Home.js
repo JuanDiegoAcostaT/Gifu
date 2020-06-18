@@ -1,14 +1,17 @@
 import React from "react";
-import ListOfGifs from '../components/ListOfGifs/ListOfGifs'
+import ListOfGifs from "../components/ListOfGifs/ListOfGifs";
 import { Link, navigate } from "@reach/router";
 import "../globalStyles/styles.css";
-import TrendingSearches from '../components/TrendingSearches/index'
+import TrendingSearches from "../components/TrendingSearches/index";
+
+export default function Home({ keyword }) {
 
 
-export default function Home({keyword}) {
+
   return (
     <div>
-      <form className="form"
+      <form
+        className="form"
         onSubmit={(event) => {
           event.preventDefault();
           const keyword = event.target.elements[0].value;
@@ -20,13 +23,17 @@ export default function Home({keyword}) {
         <button>Search</button>
       </form>
 
+      <div className="gifs__container">
+        <div className="gifs__img">
+          <h2 className="last__search">Última Busqueda</h2>
+          <ListOfGifs keyword={keyword} />
+        </div>
 
-      <h3 className="last__search" >Última Busqueda</h3>
-      <ListOfGifs keyword={keyword} />
 
-      <TrendingSearches  />
-
-
+        <div className="gifs__trends">
+          <TrendingSearches />
+        </div>
+      </div>
     </div>
   );
 }

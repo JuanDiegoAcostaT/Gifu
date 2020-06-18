@@ -4,7 +4,7 @@ import "./OnlyGif.css";
 const api_key = "vhMurxNjlCKesQlp88kAZIczkQZIahdU";
 
 export default function OnlyGif({ id }) {
-  const API_URL = `https://api.giphy.com/v1/gifs/${id}?api_key=${api_key}`;
+  const API_URL = `https://api.giphy.com/v1/gifs/${id}?api_key=${api_key}&limit=100`;
 
   const [OnlyGif, setOnlyGif] = useState([]);
 

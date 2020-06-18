@@ -1,0 +1,13 @@
+.gif__trends {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding-left: 0px;
+}
+
+.gif__trends li {
+    color: white !important;
+}

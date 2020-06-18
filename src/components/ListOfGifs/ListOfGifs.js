@@ -5,7 +5,11 @@ import useGifs from "../../hooks/useGifs";
 import LoadingSpinner from "../Spinner/LoadingSpinner";
 
 export default function ListOfGifs({ keyword }) {
-  const { loading, gifs } = useGifs({ keyword });
+  const { loading, gifs, setPage } = useGifs({ keyword });
+
+  const handleClick = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
 
   if (loading) return <LoadingSpinner />;
 
@@ -22,6 +26,10 @@ export default function ListOfGifs({ keyword }) {
           />
         ))}
       </div>
+
+      <button className="button__next" onClick={handleClick}>
+        More Gifs About {keyword}
+      </button>
     </>
   );
 }
