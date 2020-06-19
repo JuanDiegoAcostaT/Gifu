@@ -4,7 +4,6 @@ import "./ListOfGifs.css";
 import useGifs from "../../hooks/useGifs";
 import LoadingSpinner from "../Spinner/LoadingSpinner";
 import useNearScreen from "../../hooks/useNearScreen";
-import TrendingSearches from "../TrendingSearches/index";
 import debounce from "just-debounce-it";
 
 export default function ListOfGifs({ keyword }) {
@@ -44,9 +43,7 @@ export default function ListOfGifs({ keyword }) {
           ))}
         </div>
 
-        <div className="gifs__trends">
-          <TrendingSearches />
-        </div>
+
       </div>
       
       <button className="button__next" onClick={handleClick}>
