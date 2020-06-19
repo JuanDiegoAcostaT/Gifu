@@ -8,7 +8,7 @@ export default function Home({ keyword }) {
 
 
   return (
-    <div>
+    <div >
       <form
         className="form"
         onSubmit={(event) => {
@@ -18,7 +18,7 @@ export default function Home({ keyword }) {
           navigate(`/search/${keyword}`);
         }}
       >
-        <input placeholder="Search a Gif...." type="text" />
+        <input className='gif__input' placeholder="Search a Gif...." type="text" />
         <button>Search</button>
       </form>
 

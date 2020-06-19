@@ -42,6 +42,8 @@ li a {
 
 .form {
     padding-bottom: 50px;
+    width: 100%;
+
 }
 
 .form input{
@@ -69,12 +71,14 @@ li a {
     padding: 60px 100px 0px 20px;   
 }
 
-
-.button__next {
-    width: 50%;
-    height: 50px;
-    margin: 50px 25% ;    
+.gif__input {
+    width: 70%;
 }
+
+
+
+
+
 
 @media (max-width : 900px) {
     .gifs__container {
@@ -89,6 +93,10 @@ li a {
     .gifs__trends {
         padding: 0px;
     }
+    .gif__input {
+        width: 50%;
+    }
+    
 
 
 }

@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className="header">
       <Link className="main__title" to="/">
-        <h1>Gifú</h1>
+        <img src='../../../images/untitled-1.png' />
       </Link>
     </div>
   );
