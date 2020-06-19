@@ -6,7 +6,8 @@ export default function TrendingSearches() {
     const [trends, setTrends] = useState([]);
   
     useEffect(function () {
-      getTrending().then(setTrends);
+      getTrending()
+        .then(setTrends);
     }, []);
   
     return <Category name="Tendencias" options={trends} />;

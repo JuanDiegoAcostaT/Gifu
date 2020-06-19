@@ -6,7 +6,7 @@ const apiResponse = (responses) => {
 }
 
 
-export default function getTrending() {
+export default  function getTrending() {
   const API_URL = `https://api.giphy.com/v1/trending/searches?api_key=${api_key}`
 
 

@@ -2,7 +2,6 @@ import React from "react";
 import ListOfGifs from "../components/ListOfGifs/ListOfGifs";
 import { Link, navigate } from "@reach/router";
 import "../globalStyles/styles.css";
-import TrendingSearches from "../components/TrendingSearches/index";
 
 export default function Home({ keyword }) {
 
@@ -30,9 +29,7 @@ export default function Home({ keyword }) {
         </div>
 
 
-        <div className="gifs__trends">
-          <TrendingSearches />
-        </div>
+
       </div>
     </div>
   );

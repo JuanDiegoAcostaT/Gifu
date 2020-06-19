@@ -1,19 +1,24 @@
 import { useState, useEffect, useRef } from 'react'
 
-const useNearScreen = () => {
+const useNearScreen = ({ distance, externalRef, once = true }) => {
     const [isNearScreen, setShow] = useState(false);
     const fromRef = useRef();
   
     useEffect(function () {
       let observer;
+
+      const element = externalRef ? externalRef.current : fromRef.current
+
       const onChange = (entries) => {
         const el = entries[0];
-        if (el.isIntersecting == true) {
+        if (el.isIntersecting) {
           setShow(true);
-          observer && observer.disconnect();
+          once && observer && observer.disconnect();  
+        } else {
+          !once && setShow(false)
         }
       };
-  
+
       //Este promise.resolve es para detectar el soporte de los navegadores con IntersectionObserver
       Promise.resolve(
         typeof IntersectionObserver != "undefined"
@@ -21,10 +26,10 @@ const useNearScreen = () => {
           : import("intersection-observer")
       ).then(() => {
         const observer = new IntersectionObserver(onChange, {
-          rootMargin: '10px',
+          rootMargin: distance,
         });
   
-        observer.observe(fromRef.current);
+        if(element) return observer.observe(element);
       });
   
       return () => observer && observer.disconnect();
