@@ -21,7 +21,8 @@
     grid-gap: var(--gridList-gap, 6px);
     gap: var(--gridList-gap, 6px);
     align-items: center;
-    width: 100%;
+    width: 90%;
+    margin: 5%;
   }
 
   #visor {

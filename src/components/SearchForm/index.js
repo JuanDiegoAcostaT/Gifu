@@ -15,6 +15,8 @@ export default function SearchForm() {
         }}
       >
         <input
+          id='search'
+          name='search'
           className="gif__input"
           placeholder="Search a Gif...."
           type="text"
