@@ -4,7 +4,7 @@
   "description": "A Gif Web",
   "main": "index.js",
   "scripts": {
-    "deploy" : "npx vercel",
+    "deploy": "npx vercel",
     "build": "webpack --mode-production",
     "start": "webpack-dev-server  --open  --mode development",
     "test": "react-scripts test"
