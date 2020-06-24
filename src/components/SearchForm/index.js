@@ -1,12 +1,12 @@
 import React from "react";
-import {  navigate } from "@reach/router";
-
+import { navigate } from "@reach/router";
+import "./SearchForm.module.css";
 
 export default function SearchForm() {
   return (
     <div>
       <form
-        className="form"
+        className="c-search"
         onSubmit={(event) => {
           event.preventDefault();
           const keyword = event.target.elements[0].value;
@@ -15,13 +15,13 @@ export default function SearchForm() {
         }}
       >
         <input
-          id='search'
-          name='search'
-          className="gif__input"
+          className="c-search-input"
+          id="search"
+          name="search"
           placeholder="Search a Gif...."
           type="text"
         />
-        <button>Search</button>
+        <button className="c-search-btn">Search</button>
       </form>
     </div>
   );
