@@ -1,6 +1,8 @@
 .onlyGif {
     display: flex;
     flex-direction: column;
+    text-align: center;
+
 }
 
 .gif__info{
@@ -26,12 +28,27 @@
     padding-top: 5px;
 }
 
+@media (max-width : 800px) {
+    .gif__info {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .gif__details {
+        text-align: center;
+    }
+    
+}
+
+
 @media (max-width : 300px) {
     .gif__info {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
+        width: 100%;
     }
     .gif__details {
         text-align: center;

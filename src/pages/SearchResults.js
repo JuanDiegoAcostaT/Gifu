@@ -37,6 +37,7 @@ export default function SearchResults({ keyword }) {
             {decodeURI(keyword)}
           </h3>
           <ListOfGifs gifs={gifs} />
+          <button className="btn2" onClick={handleClick}>More Gifs About {decodeURI(keyword)} </button>
           <div id="visor" ref={externalRef}></div>
       </div>
     </>

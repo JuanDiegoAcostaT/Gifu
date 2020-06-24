@@ -5,9 +5,9 @@ const fromApiResponseToGifs = apiResponse => {
   const {data = []} = apiResponse
   if (Array.isArray(data)) {
     const gifs = data.map(image => {
-      const {images, title, id} = image
-      const { url } = images.downsized_medium
-      return { title, id, url }
+      const {images, title, id, } = image
+      const { mp4 } = images.looping    
+      return { title, id, mp4 }
     })
     return gifs
   }

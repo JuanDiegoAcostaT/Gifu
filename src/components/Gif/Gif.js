@@ -2,12 +2,12 @@ import React from "react";
 import "./Gif.css";
 import { Link } from "@reach/router";
 
- function Gif({ title, url, id }) {
+ function Gif({ title, mp4, id }) {
   return (
     <div className="Gif">
       <Link to={`/gif/${id}`} className='Gif-link'>
         <h4>{title}</h4>
-        <img loading='lazy' alt={title} src={url} type="MPEG4/WebM" />
+        <video autoPlay loop muted playsInline src={mp4}  loading='lazy' type="video/mp4" />
       </Link>
     </div>
   );

@@ -5,12 +5,12 @@ import "./ListOfGifs.css";
 export default function ListOfGifs({ keyword, gifs }) {
   return <div className='ListOfGifs'>
     {
-      gifs.map(({id, title, url}) =>
+      gifs.map(({id, title, mp4}) =>
         <Gif
-          id={id}
+          id={id} 
           key={id}
           title={title}
-          url={url}
+          mp4={mp4}
         />
       )
     }

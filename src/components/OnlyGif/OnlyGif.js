@@ -1,39 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./OnlyGif.css";
 
-const api_key = "vhMurxNjlCKesQlp88kAZIczkQZIahdU";
 
-export default function OnlyGif({ id }) {
-  const API_URL = `https://api.giphy.com/v1/gifs/${id}?api_key=${api_key}&limit=100`;
 
-  const [OnlyGif, setOnlyGif] = useState([]);
-
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((response) => {
-        const { data } = response;
-        setOnlyGif([data]);
-      });
-  }, []);
+export default function OnlyGif({ title, id, rating, bitly_gif_url, import_datetime, slug, mp4 }) {
 
   return (
     <>
-      {OnlyGif.map((Gif) => (
-        <div className="onlyGif" key={Gif.id}>
-          <h3>{Gif.title}</h3>
+        <div className="onlyGif" key={id}>
+          <h3>{title}</h3>
           <div className="gif__info">
-            <img src={Gif.images.downsized_medium.url} alt={Gif.title} />
+          <video autoPlay loop muted playsInline src={mp4} loading='lazy' type="video/mp4" />
             <div className="gif__details">
-              <span>{Gif.rating}</span>
-              <span>{Gif.id}</span>
-              <span>{Gif.bitly_gif_url}</span>
-              <span>{Gif.import_datetime}</span>
-              <span>{Gif.slug}</span>
+              <span>{rating}</span>
+              <span>{id}</span>
+              <span>{bitly_gif_url}</span>
+              <span>{import_datetime}</span>
+              <span>{slug}</span>
             </div>
           </div>
         </div>
-      ))}
     </>
   );
 }
