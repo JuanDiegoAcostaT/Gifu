@@ -4,12 +4,17 @@ import SearchForm from "../components/SearchForm/index";
 import TrendingSearches from "../components/TrendingSearches/index";
 import "../globalStyles/styles.css";
 import { useGifs } from "../hooks/useGifs";
+import { Helmet } from "react-helmet";
 
 export default function Home({ keyword }) {
   const { gifs } = useGifs();
 
   return (
     <>
+      <Helmet>
+        <title>Gifú | Home</title>
+        <meta name="description" content="Gifú Searching" />
+      </Helmet>
       <header className="o-header">
         <SearchForm />
       </header>

@@ -3,7 +3,8 @@ import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import SearchResults from "./pages/SearchResults";
 import Header from "./components/Header/Header";
-import { Router, Link } from "@reach/router";
+import Error from './pages/404/index'
+import { Router } from "@reach/router";
 import "./globalStyles/styles.css";
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
             <Home  path="/" />
             <SearchResults  path="/search/:keyword" />
             <Detail path="/gif/:id" />
+            <Error default/>
           </Router>
         </section>
       </div>

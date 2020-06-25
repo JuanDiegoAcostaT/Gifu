@@ -3,6 +3,8 @@ import Gif from "../Gif/Gif";
 import "./ListOfGifs.css";
 
 export default function ListOfGifs({ keyword, gifs }) {
+
+
   return <div className='ListOfGifs'>
     {
       gifs.map(({id, title, mp4}) =>

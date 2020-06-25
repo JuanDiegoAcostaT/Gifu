@@ -6,7 +6,8 @@ export default function Header() {
   return (
     <div className="header">
       <Link className="main__title" to="/">
-        <img src='https://i.imgur.com/PSesLE0.png' alt="Logo" />
+        {/* <img src='https://i.imgur.com/PSesLE0.png' alt="Logo" /> */}
+        <h1>Gifu</h1>
       </Link>
     </div>
   );
