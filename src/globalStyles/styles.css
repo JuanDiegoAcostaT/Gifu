@@ -17,6 +17,10 @@
   --brand-color_6: E85D04;
 }
 
+.logo{
+  width: 150px;
+}
+
 body {
   background-color: var(--theme-body-bg);
     color: white;
