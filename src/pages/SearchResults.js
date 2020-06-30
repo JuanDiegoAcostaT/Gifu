@@ -7,20 +7,21 @@ import { Link } from "@reach/router";
 import debounce from "just-debounce-it";
 /* import useSeo from "../hooks/useSeo"; */
 import { Helmet } from "react-helmet";
+import SearchForm from '../components/SearchForm/index'
 
-export default function SearchResults({ keyword }) {
-  const { loading, gifs, setPage } = useGifs({ keyword });
+export default function SearchResults({ keyword, rating, lang }) {
+  const { loading, gifs, setPage } = useGifs({ keyword, rating, lang });
   const externalRef = useRef();
   const { isNearScreen } = useNearScreen({
     externalRef: loading ? null : externalRef,
     once: false,
   });
 
-/*  Dejo de usar el hook useSeo porque paso a usar react-helmet */
+  /*  Dejo de usar el hook useSeo porque paso a usar react-helmet */
 
   const title = gifs ? `${gifs.length} results of ${keyword}` : "";
   const description = `Detail of ${keyword}`;
-/*   useSeo({ description }); */
+  /*   useSeo({ description }); */
 
   const handleClick = () => {
     setPage((prevPage) => prevPage + 1);
@@ -41,7 +42,7 @@ export default function SearchResults({ keyword }) {
         <Helmet>
           <title>Cargando...</title>
         </Helmet>
-        <LoadingSpinner />;
+        <LoadingSpinner />
       </>
     );
   if (gifs == "")
@@ -56,8 +57,11 @@ export default function SearchResults({ keyword }) {
     <>
       <Helmet>
         <title>{title}</title>
-        <meta name="description" content={description}/>
+        <meta name="description" content={description} />
       </Helmet>
+      <header className="o-header">
+        <SearchForm initialKeyword={keyword} initialRating={rating} initialLang={lang} />
+      </header>
       <div className="App-wrapper">
         <h3 className="App-title">{decodeURI(keyword)}</h3>
         <ListOfGifs gifs={gifs} />

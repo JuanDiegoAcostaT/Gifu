@@ -10,7 +10,7 @@ export default function Category({name , options = []}) {
       <ul className="Category-list">
         {options.map((singleOption) => (
           <li key={singleOption} className="Category-list-item">
-            <Link className="Category-link" to={`/search/${singleOption}`}>
+            <Link className="Category-link" to={`/search/${singleOption}/g/es`}>
               {singleOption}
             </Link>
           </li>

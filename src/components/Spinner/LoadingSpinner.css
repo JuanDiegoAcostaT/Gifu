@@ -1,6 +1,7 @@
 .lds-roller {
     display: inline-block;
-    position: relative;
+    justify-content: center;
+    padding-left: 40%;
     width: 80px;
     height: 80px;
   }

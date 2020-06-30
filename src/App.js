@@ -15,7 +15,7 @@ export default function App() {
         <section className="App-content">
           <Router>
             <Home  path="/" />
-            <SearchResults  path="/search/:keyword" />
+            <SearchResults  path="/search/:keyword/:rating/:lang" />
             <Detail path="/gif/:id" />
             <Error default/>
           </Router>

@@ -3,7 +3,7 @@ import getGifs from '../services/getGifs'
 
 const INITIAL_PAGE = 0
 
-export  function useGifs({ keyword } = {}) {
+export  function useGifs({ keyword , rating, lang } = { keyword : null }) {
     const [gifs, setGifs] = useState([]);
     const [page, setPage] = useState(INITIAL_PAGE)
     const [loading, setLoading] = useState(false)
@@ -14,11 +14,11 @@ export  function useGifs({ keyword } = {}) {
   
     useEffect(() => {
       setLoading(true)
-      getGifs({ keyword : keywordToUse }).then((gifs) => {
+      getGifs({ keyword : keywordToUse, rating, lang }).then((gifs) => {
          setGifs(gifs)
           setLoading(false)
           if(keyword) {
-            localStorage.setItem('lastKeyword', keyword)
+            localStorage.setItem('lastKeyword', keyword, rating, lang)
           }
       });
     }, [keyword, keywordToUse, setGifs]);
@@ -29,7 +29,7 @@ export  function useGifs({ keyword } = {}) {
 
       setLoadingNextPage(true)
 
-      getGifs( { keyword : keywordToUse, page   } )
+      getGifs( { keyword : keywordToUse, page, rating, lang } )
       .then(nextGifs => {
         setGifs(prevGifs => prevGifs.concat(nextGifs))
         setLoadingNextPage(false)

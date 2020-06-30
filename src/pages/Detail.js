@@ -25,7 +25,7 @@ export default function Detail({ id }) {
         <Helmet>
           <title>Cargando...</title>
         </Helmet>
-        <LoadingSpinner />;
+        <LoadingSpinner />
       </>
     );
   if (isError) return redirectTo("/404");
