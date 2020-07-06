@@ -45,6 +45,7 @@ export default function SearchForm({
   return (
     <form className="c-search" onSubmit={handleOnSubmit}>
       <div className="c-container">
+      <button className="c-search-btn">Search</button>
         <input
           className="c-search-input"
           id="search"
@@ -77,7 +78,6 @@ export default function SearchForm({
         <small>{times}</small>
       </div>
 
-      <button className="c-search-btn">Search</button>
     </form>
   );
 }
