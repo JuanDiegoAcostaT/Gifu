@@ -1,0 +1,36 @@
+.gf-header{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 10px 0px 0px;
+}
+
+.gf-header a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.gf-header a:hover {
+    text-decoration: underline;
+    
+}
+
+.btn3 {
+    height: 35px;
+    width: 100px;
+    background: var(--brand-color_3);
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    transition: all 0.2s ease;
+  }
+  .btn3:hover {
+    background: #fff;
+    color: var(--brand-color_3);
+    cursor: pointer;
+  }
+  
+  .gf-header a + a {
+      margin: 0 12px;
+  }

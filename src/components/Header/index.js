@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import "./Header.css";
+import "./styles.css";
 
 export default function Header() {
   return (

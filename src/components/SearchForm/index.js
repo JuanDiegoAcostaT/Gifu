@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "@reach/router";
-import "./SearchForm.module.css";
+import "./Styles.css"
 import { LANGS, RATINGS } from "./services";
 import { useForm } from "./hook";
 
@@ -75,7 +75,7 @@ export default function SearchForm({
             <option key={lang}>{lang}</option>
           ))}
         </select>
-        <small>{times}</small>
+        {/* <small>{times}</small> */}
       </div>
 
     </form>

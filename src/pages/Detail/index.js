@@ -1,7 +1,7 @@
 import React from "react";
-import useSingleGif from "../hooks/useSingleGif";
-import LoadingSpinner from "../components/Spinner/LoadingSpinner";
-import OnlyGif from "../components/OnlyGif/OnlyGif";
+import useSingleGif from "../../hooks/useSingleGif";
+import LoadingSpinner from "../../components/Spinner/index";
+import OnlyGif from "../../components/OnlyGif/index";
 /* import useSeo from '../hooks/useSeo' */
 import { redirectTo } from "@reach/router";
 import { Helmet } from "react-helmet";

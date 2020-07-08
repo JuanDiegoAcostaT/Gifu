@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "@reach/router";
-import useUser from "../hooks/useUser";
+import { useNavigate, Link } from "@reach/router";
+import useUser from "../../hooks/useUser";
+import "./styles.css";
 
-export default function Login() {
+export default function Login({ onLogin }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -11,8 +12,9 @@ export default function Login() {
   useEffect(() => {
     if (isLogged) {
       navigate("/", { replace: true });
+      onLogin && onLogin();
     }
-  }, [isLogged]);
+  }, [isLogged, onLogin, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,22 +31,23 @@ export default function Login() {
 
   return (
     <div className="conatiner__form--login">
-      <h2 className="login__title">Sign in</h2>
       {isError && <strong>User or Password are invalid.</strong>}
       {isLoginLoading && <strong>Checking Credentials....</strong>}
       {!isLoginLoading && (
         <div className="login__container">
-          <form className="login-form" onSubmit={handleSubmit}>
-            <label>User</label>
+          <form className="login__form" onSubmit={handleSubmit}>
+            <label htmlFor="username">User</label>
             <input
+              id="username"
               required
               onChange={handleUsername}
               type="text"
               placeholder="username"
               value={username}
             ></input>
-            <label>Password</label>
+            <label htmlFor="password">Password</label>
             <input
+              id="password"
               required
               onChange={handlePassword}
               type="password"
@@ -52,6 +55,7 @@ export default function Login() {
               value={password}
             ></input>
             <button>Login</button>
+            {isLogged && <p>you successfully logged in 💚</p>}
           </form>
         </div>
       )}

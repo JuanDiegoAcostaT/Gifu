@@ -15,19 +15,18 @@
   
   .Category-list-item {
       list-style: none;
-      padding: 0.3rem;
-      margin: 0.2rem;
-      font-size: 1.2rem;
+      padding: 7px;
+      margin: 2px;
+      font-size: 12px;
   }
   .Category-link {
     color: inherit;
-    font-size: 1em;
     text-decoration: none;
     font-size: 1em;
     transition: color ease-in 0.1s;
   }
   
-  @media screen and (min-width: 55rem) {
+  @media screen and (min-width: 53rem) {
     .Category-title{
       text-align: right;
     }

@@ -1,13 +1,13 @@
 import React, { useRef, useCallback, useEffect } from "react";
-import ListOfGifs from "../components/ListOfGifs/ListOfGifs";
-import LoadingSpinner from "../components/Spinner/LoadingSpinner";
-import { useGifs } from "../hooks/useGifs";
-import useNearScreen from "../hooks/useNearScreen";
+import ListOfGifs from "../../components/ListOfGifs/index";
+import LoadingSpinner from "../../components/Spinner/index";
+import { useGifs } from "../../hooks/useGifs";
+import useNearScreen from "../../hooks/useNearScreen";
 import { Link } from "@reach/router";
 import debounce from "just-debounce-it";
 /* import useSeo from "../hooks/useSeo"; */
 import { Helmet } from "react-helmet";
-import SearchForm from '../components/SearchForm/index'
+import SearchForm from '../../components/SearchForm/index'
 
 export default function SearchResults({ keyword, rating, lang }) {
   const { loading, gifs, setPage } = useGifs({ keyword, rating, lang });

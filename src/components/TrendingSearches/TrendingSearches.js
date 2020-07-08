@@ -1,5 +1,5 @@
 import React,  { useState, useEffect }  from 'react'
-import Category from "../Category/Category";
+import Category from "../Category/index";
 import getTrending from "../../services/getTrending";
 
  function TrendingSearches() {

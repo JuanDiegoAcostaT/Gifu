@@ -1,12 +1,12 @@
 import React from "react";
-import "./Gif.css";
+import "./styles.css";
 import { Link } from "@reach/router";
 import Fav from "../Fav/index";
 
 function Gif({ title, mp4, id }) {
   return (
     <div className="Gif">
-      <div className='Gif__buttons'>
+      <div className="Gif__buttons">
         <Fav id={id}></Fav>
       </div>
       <Link to={`/gif/${id}`} className="Gif-link">

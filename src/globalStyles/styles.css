@@ -16,10 +16,6 @@
   --brand-color_6: E85D04;
 }
 
-.logo {
-  width: 150px;
-}
-
 body {
   background-color: var(--theme-body-bg);
   color: white;
@@ -104,18 +100,6 @@ li a {
   display: none;
 }
 
-.btn3 {
-  height: 35px;
-  width: 100px;
-  background: var(--brand-color_3);
-  border: 0;
-  color: #fff;
-}
-.btn3:hover {
-  background: #fff;
-  color: var(--brand-color_3);
-}
-
 .btn2 {
   margin-top: 20px;
   width: 100%;
@@ -129,6 +113,14 @@ li a {
   text-align: center;
 }
 
+.o-header {
+  background-color: inherit;
+  position: sticky;
+  top: 0;
+  z-index: var(--zIndex-header);
+  max-height: var(--search-size-mx-h);
+}
+
 @media (max-width: 600px) {
   #visor {
     display: block;
@@ -138,9 +130,9 @@ li a {
   }
 }
 
-@media screen and (min-width: 55rem) {
+@media screen and (min-width: 53rem) {
   .App-main {
-    flex-direction: initial;
+    flex-direction: row;
   }
 
   .App-category {
@@ -189,44 +181,7 @@ li a {
   height: 250px;
 }
 
-.login__container {
-  margin-left: 25%;
-  width: 50%;
-  align-items: center;
-  border: 2px solid whitesmoke;
-  border-radius: 5px;
-  background-color: var(--brand-color_3);
-  -webkit-box-shadow: -6px -7px 38px 16px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -6px -7px 38px 16px rgba(0, 0, 0, 0.75);
-  box-shadow: -6px -7px 38px 16px rgba(0, 0, 0, 0.75);
-}
-
-.login-form {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.login-form input {
-  padding: 10px 20px 10px 20px;
-  margin: 15px;
-  border: 0;
-  border-radius: 10px;
-}
-
-.login-form button {
-  padding: 10px 30px 10px 30px;
-  border: 0;
-  border-radius: 10px;
-}
-
 .login__title {
   text-align: center;
-}
-
-.conatiner__form--login {
-  text-align: center;
+  padding: 20px 10px;
 }
