@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "@reach/router";
-import "./styles.css";
+import { HeaderComponent, Logo } from './styles'
 
 export default function Header() {
   return (
-    <div className="header">
+    <HeaderComponent>
       <Link className="main__title" to="/">
-        <img
+        <Logo
           className="logo"
           src="https://i.imgur.com/lAYEJRF.png"
           alt="Logo"
         />
       </Link>
-    </div>
+    </HeaderComponent>
   );
 }

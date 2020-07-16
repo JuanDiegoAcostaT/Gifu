@@ -3,6 +3,7 @@ import register from "../../services/register";
 import "./styles.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "@reach/router";
+import ButtonComponent from '../Button/index'
 
 export default function Register() {
   const navigate = useNavigate();
@@ -93,14 +94,12 @@ export default function Register() {
                       <p>{errors.password}</p>
                     </span>
                   )} */}
-                  <button
-                    className="btn__register"
+                  <ButtonComponent
                     disabled={isSubmitting}
                     type="submit"
-                    className="btn"
                   >
                     Sign Up
-                  </button>
+                  </ButtonComponent>
                 </Form>
               )}
             </div>

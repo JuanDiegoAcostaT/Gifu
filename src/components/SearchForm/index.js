@@ -1,8 +1,14 @@
 import React from "react";
 import { useNavigate } from "@reach/router";
-import "./Styles.css"
 import { LANGS, RATINGS } from "./services";
 import { useForm } from "./hook";
+import {
+  Search,
+  SearchButton,
+  SearchInput,
+  SearchContainer,
+  SearchSelect,
+} from "./styles";
 
 export default function SearchForm({
   initialKeyword = "",
@@ -43,11 +49,10 @@ export default function SearchForm({
   };
 
   return (
-    <form className="c-search" onSubmit={handleOnSubmit}>
-      <div className="c-container">
-      <button className="c-search-btn">Search</button>
-        <input
-          className="c-search-input"
+    <Search onSubmit={handleOnSubmit}>
+      <SearchContainer>
+        <SearchButton>Search</SearchButton>
+        <SearchInput
           id="search"
           name="search"
           placeholder="Search a Gif...."
@@ -55,29 +60,20 @@ export default function SearchForm({
           onChange={handleChangeKeyword}
           value={keyword}
         />
-        <select
-          value={rating}
-          onChange={handleChangeRating}
-          className="c-search-select"
-        >
+        <SearchSelect value={rating} onChange={handleChangeRating}>
           <option disabled>Rating Type</option>
           {RATINGS.map((rating) => (
             <option key={rating}>{rating}</option>
           ))}
-        </select>
-        <select
-          value={lang}
-          onChange={handleChangeLang}
-          className="c-search-select"
-        >
+        </SearchSelect>
+        <SearchSelect value={lang} onChange={handleChangeLang}>
           <option disabled>Language</option>
           {LANGS.map((lang) => (
             <option key={lang}>{lang}</option>
           ))}
-        </select>
+        </SearchSelect>
         {/* <small>{times}</small> */}
-      </div>
-
-    </form>
+      </SearchContainer>
+    </Search>
   );
 }

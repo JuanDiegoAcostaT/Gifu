@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "@reach/router";
+import { useNavigate } from "@reach/router";
 import useUser from "../../hooks/useUser";
 import "./styles.css";
+import ButtonComponent from '../../components/Button/index'
 
 export default function Login({ onLogin }) {
   const navigate = useNavigate();
@@ -54,7 +55,7 @@ export default function Login({ onLogin }) {
               placeholder="password"
               value={password}
             ></input>
-            <button>Login</button>
+            <ButtonComponent>Login</ButtonComponent>
             {isLogged && <p>you successfully logged in 💚</p>}
           </form>
         </div>

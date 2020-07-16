@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 .register__container {
@@ -33,7 +32,6 @@
   border-radius: 10px;
 }
 
-
 .register__form input.error {
   border: 4px solid var(--theme-body-bg);
 }
@@ -41,25 +39,4 @@
 .errors__ {
   color: var(--theme-body-bg);
   font-size: 10px;
-}
-
-.register__form button {
-  padding: 10px 30px 10px 30px;
-  border: 0;
-  border-radius: 10px;
-  transition: all 0.2s ease;
-  background-color: var(--brand-color_2);
-}
-
-.register__form button:disabled {
-  opacity: .3;
-  pointer-events: none;
-}
-
-
-.register__form button:hover {
-  cursor: pointer;
-  padding: 12px 35px 12px 35px;
-  color: var(--brand-color_2);
-  background-color: white;
 }

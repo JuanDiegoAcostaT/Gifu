@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./styles.css";
+import { ModalButton, ModalComponent, ModalContent } from './styles'
 
 function Modal({ children, onClose }) {
   return (
-    <div className="modal">
-      <div className="modal__content">
-        <button className="btn4" onClick={onClose}>
+    <ModalComponent>
+      <ModalContent>
+        <ModalButton onClick={onClose}>
           ❌
-        </button>
+        </ModalButton>
         <p>Please get login for adding favorites gifs to list.</p>
         {children}
-      </div>
-    </div>
+      </ModalContent>
+    </ModalComponent>
   );
 }
 

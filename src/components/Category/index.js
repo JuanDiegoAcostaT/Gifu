@@ -1,21 +1,24 @@
 import React from "react";
-import { Link } from "@reach/router";
-import './styles.css'
+import {
+  CategoryTitle,
+  CategoryList,
+  CategoryLink,
+  CategoryListItem,
+} from "./styles";
 
-
-export default function Category({name , options = []}) {
+export default function Category({ name, options = [] }) {
   return (
-    <div className='Category'>
-      <h3 className="Category-title">{name}</h3>
-      <ul className="Category-list">
-        {options.map((singleOption) => (
-          <li key={singleOption} className="Category-list-item">
-            <Link className="Category-link" to={`/search/${singleOption}/g/es`}>
+    <section>
+      <CategoryTitle>{name}</CategoryTitle>
+      <CategoryList>
+        {options.map((singleOption, index) => (
+          <CategoryListItem key={singleOption} index={index} >
+            <CategoryLink to={`/search/${singleOption}/g/es`}>
               {singleOption}
-            </Link>
-          </li>
+            </CategoryLink>
+          </CategoryListItem>
         ))}
-      </ul>
-    </div>
+      </CategoryList>
+    </section>
   );
 }

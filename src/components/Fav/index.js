@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import useUser from "../../hooks/useUser";
 import Modal from "../Modal/index";
 import Login from "../Login/index";
-import "./styles.css";
+import { GifFav } from './styles'
 
 export default function Fav({ id }) {
   const { isLogged, addFav, favs } = useUser();
@@ -29,14 +29,15 @@ export default function Fav({ id }) {
 
   return (
     <>
-      <button
-        className={`gf__fav${isFaved ? "--dark" : ""}`}
+      <GifFav
+        bgColor={ isFaved ? "rgb(0, 0, 0)" : "rgb(255, 255, 255)"}
+        bgHoverColor={ isFaved ? "rgb(255, 255, 255)" : "rgb(0, 0, 0)" }
         onClick={hanldeClick}
       >
         <span role="img" aria-label={label}>
           {emoji}
         </span>
-      </button>
+      </GifFav>
       {showModal && (
         <Modal onClose={handleClose}>
           <Login onLogin={handleLogin} />

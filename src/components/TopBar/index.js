@@ -1,7 +1,7 @@
 import React from "react";
-import { Link, Match } from "@reach/router";
-import "./styles.css";
+import { Match } from "@reach/router";
 import useUser from "../../hooks/useUser";
+import { GifHeader, GifLink, GifButton } from "./styles";
 
 export default function TopBar() {
   const { isLogged, logout } = useUser();
@@ -11,19 +11,19 @@ export default function TopBar() {
   };
 
   const content = isLogged ? (
-    <button className="btn3" onClick={handleClick}>
-      LogOut
-    </button>
+    <GifButton onClick={handleClick}>LogOut</GifButton>
   ) : (
     <>
-      <Link to="/login">Login</Link>
-      <Link to="/register">Register</Link>
+      <GifLink to="/login">Login</GifLink>
+      <GifLink to="/register">Register</GifLink>
     </>
   );
 
   return (
-    <header className="gf-header">
-      <Match path="/login">{(props) => (props.match ? null : content)}</Match>
-    </header>
+    <GifHeader>
+      <Match path="//:(login|register)">
+        {(props) => (props.match ? null : content)}
+      </Match>
+    </GifHeader>
   );
 }
