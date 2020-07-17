@@ -17,11 +17,11 @@ export default function App() {
   return (
     <>
       <UserContextProvider>
-        <div className="App">
+        <div>
           <Suspense fallback={null}>
             <TopBar />
             <Header />
-            <section className="App-content">
+            <section>
               <Router>
                 <Home path="/" />
                 <SearchResults path="/search/:keyword/:rating/:lang" />

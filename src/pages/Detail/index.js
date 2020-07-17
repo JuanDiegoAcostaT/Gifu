@@ -1,5 +1,5 @@
 import React from "react";
-import useSingleGif from "../../hooks/useSingleGif";
+import { useSingleGif } from "../../hooks/useSingleGif";
 import LoadingSpinner from "../../components/Spinner/index";
 import OnlyGif from "../../components/OnlyGif/index";
 /* import useSeo from '../hooks/useSeo' */
@@ -17,7 +17,7 @@ export default function Detail({ id }) {
   const description = `Detail of ${title}`;
 
   /*  Dejo de usar el hook useSeo porque paso a usar react-helmet */
- /*  useSeo({description : `Detail of ${title}`}) */
+  /*  useSeo({description : `Detail of ${title}`}) */
 
   if (isLoading)
     return (
@@ -35,7 +35,7 @@ export default function Detail({ id }) {
     <>
       <Helmet>
         <title>{title}</title>
-        <meta name="description" content={description}/>
+        <meta name="description" content={description} />
       </Helmet>
       <OnlyGif
         title={title}

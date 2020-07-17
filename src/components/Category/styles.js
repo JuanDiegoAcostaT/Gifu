@@ -5,6 +5,7 @@ import { bps } from "../../styles/index";
 export const CategoryTitle = styled.h3`
   color: var(--theme-body-txt);
   font-weight: bold;
+  text-align: left;
 
   ${bps.greaterThanMobile} {
     text-align: right;
@@ -27,6 +28,8 @@ const genereteMultiColor = (props) => {
   const colorIndex = (props.index % 5) + 1;
   return `background-color: var(--brand-color_${colorIndex}) `;
 };
+
+
 
 export const CategoryListItem = styled.li`
   list-style: none;

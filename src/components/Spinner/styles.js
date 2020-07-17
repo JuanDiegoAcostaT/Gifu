@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { keyframes } from "@emotion/core";
+import { css, keyframes } from "@emotion/core";
 
 const RollerAnimation = keyframes`
   from {
@@ -12,13 +12,13 @@ const RollerAnimation = keyframes`
 
 export const Roller = styled.div`
   display: inline-block;
+  align-items: center;
   justify-content: center;
-  padding-left: 40%;
   width: 80px;
   height: 80px;
 `;
 
-const RollerCommon = `
+const RollerCommon = css`
   animation: ${RollerAnimation} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   transform-origin: 40px 40px;
   &:after {

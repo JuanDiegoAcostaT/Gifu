@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import register from "../../services/register";
-import "./styles.css";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik } from "formik";
 import { useNavigate } from "@reach/router";
-import ButtonComponent from '../Button/index'
+import ButtonComponent from "../Button/index";
+import {
+  RegisterContainer,
+  RegisterError,
+  RegisterForm,
+  RegisterFormContainer,
+  RegisterInput,
+} from "./styles";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -30,7 +36,7 @@ export default function Register() {
 
   return (
     <>
-      <div className="conatiner__form--register">
+      <RegisterFormContainer>
         <Formik
           initialValues={initialValues}
           validate={validateFields}
@@ -48,64 +54,54 @@ export default function Register() {
           }}
         >
           {({ errors, isSubmitting }) => (
-            <div className="register__container">
+            <RegisterContainer>
               {registered ? (
-                <div className='register__form'>
+                <RegisterForm>
                   <p>you successfully Registered in 💚</p>
                   <small>in 5 seconds you will be redirected .....</small>{" "}
-                </div>
+                </RegisterForm>
               ) : (
-                <Form className="register__form">
+                <RegisterForm>
                   <label htmlFor="username">User</label>
-                  <Field
-                    className={errors.username ? "error" : ""}
+                  <RegisterInput
+                    border={
+                      errors.username ? "4px solid var(--theme-body-bg);" : "0"
+                    }
                     required
                     id="username"
                     name="username"
                     type="text"
                     placeholder="Username..."
-                  ></Field>
-                  <ErrorMessage
-                    style={{ fontSize: "10px" }}
+                  ></RegisterInput>
+                  <RegisterError
                     name="username"
                     component="small"
                   />
-                  {/* {errors.username && (
-                    <span className="errors__">
-                      <p>{errors.username}</p>
-                    </span>
-                  )} */}
+
                   <label htmlFor="password">Password</label>
-                  <Field
+                  <RegisterInput
                     required
-                    className={errors.password ? "error" : ""}
+                    border={
+                      errors.username ? "4px solid var(--theme-body-bg);" : "0"
+                    }
                     id="password"
                     name="password"
                     type="password"
                     placeholder="Password..."
-                  ></Field>
-                  <ErrorMessage
-                    style={{ fontSize: "10px" }}
+                  ></RegisterInput>
+                  <RegisterError
                     name="password"
                     component="small"
                   />
-                  {/* {errors.password && (
-                    <span className="errors__">
-                      <p>{errors.password}</p>
-                    </span>
-                  )} */}
-                  <ButtonComponent
-                    disabled={isSubmitting}
-                    type="submit"
-                  >
+                  <ButtonComponent disabled={isSubmitting} type="submit">
                     Sign Up
                   </ButtonComponent>
-                </Form>
+                </RegisterForm>
               )}
-            </div>
+            </RegisterContainer>
           )}
         </Formik>
-      </div>
+      </RegisterFormContainer>
     </>
   );
 }

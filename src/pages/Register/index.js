@@ -4,7 +4,7 @@ import Register from "../../components/Register/index";
 
 export default function LoginPage() {
   return (
-    <div className="login__title">
+    <section>
       <h2>Register</h2>
       <Register />
       <p>
@@ -14,6 +14,6 @@ export default function LoginPage() {
           <br /> Login
         </Link>
       </p>
-    </div>
+    </section>
   );
 }

@@ -7,7 +7,8 @@ import { Link } from "@reach/router";
 import debounce from "just-debounce-it";
 /* import useSeo from "../hooks/useSeo"; */
 import { Helmet } from "react-helmet";
-import SearchForm from '../../components/SearchForm/index'
+import SearchForm from "../../components/SearchForm/index";
+import { Button, Visor } from "./styles";
 
 export default function SearchResults({ keyword, rating, lang }) {
   const { loading, gifs, setPage } = useGifs({ keyword, rating, lang });
@@ -47,10 +48,10 @@ export default function SearchResults({ keyword, rating, lang }) {
     );
   if (gifs == "")
     return (
-      <div className="Error">
+      <section>
         <h1>We could not find results with this keyword.</h1>
         <Link to="/">Home</Link>
-      </div>
+      </section>
     );
 
   return (
@@ -60,15 +61,19 @@ export default function SearchResults({ keyword, rating, lang }) {
         <meta name="description" content={description} />
       </Helmet>
       <header className="o-header">
-        <SearchForm initialKeyword={keyword} initialRating={rating} initialLang={lang} />
+        <SearchForm
+          initialKeyword={keyword}
+          initialRating={rating}
+          initialLang={lang}
+        />
       </header>
       <div className="App-wrapper">
         <h3 className="App-title">{decodeURI(keyword)}</h3>
         <ListOfGifs gifs={gifs} />
-        <button className="btn2" onClick={handleClick}>
+        <Button onClick={handleClick}>
           More Gifs About {decodeURI(keyword)}{" "}
-        </button>
-        <div id="visor" ref={externalRef}></div>
+        </Button>
+        <Visor ref={externalRef}></Visor>
       </div>
     </>
   );

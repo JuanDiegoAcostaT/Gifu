@@ -1,6 +1,7 @@
 export const bps = {
   olderThanMobile: "@media screen and (min-width: 60rem)",
   greaterThanMobile: "@media screen and (min-width: 53rem)",
+  commonMobiles: "@media screen and (max-width: 45rem)",
   lessThanMobile: "@media screen and (min-width: 37.5rem)",
   smallMobile: "@media (max-width: 350px)",
   extraSmallMobile: "@media (max-width : 300px)",

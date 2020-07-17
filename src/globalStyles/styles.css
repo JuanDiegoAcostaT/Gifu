@@ -60,7 +60,8 @@ li a {
 
 .App-title {
   color: var(--theme-body-txt);
-  margin-top: 0.6rem;
+  margin-top: 1rem;
+  text-align: left;
 }
 
 .App-content {
@@ -96,18 +97,7 @@ li a {
   margin-bottom: 25px;
   width: 100%;
 }
-#visor {
-  display: none;
-}
 
-.btn2 {
-  margin-top: 20px;
-  width: 100%;
-  height: 40px;
-  background: var(--brand-color_3);
-  border: 0;
-  color: #fff;
-}
 
 .o-header {
   background-color: inherit;
@@ -117,14 +107,6 @@ li a {
   max-height: var(--search-size-mx-h);
 }
 
-@media (max-width: 600px) {
-  #visor {
-    display: block;
-  }
-  .btn2 {
-    display: none;
-  }
-}
 
 @media screen and (min-width: 53rem) {
   .App-main {

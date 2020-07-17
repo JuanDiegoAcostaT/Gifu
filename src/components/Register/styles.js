@@ -1,11 +1,14 @@
-.conatiner__form--register {
+import styled from "@emotion/styled";
+import { Form, Field, ErrorMessage } from "formik";
+
+export const RegisterFormContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+`;
 
-.register__container {
+export const RegisterContainer = styled.div`
   width: 80%;
   align-items: center;
   border: 2px solid whitesmoke;
@@ -14,29 +17,24 @@
   -webkit-box-shadow: -6px -7px 38px 16px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -6px -7px 38px 16px rgba(0, 0, 0, 0.75);
   box-shadow: -6px -7px 38px 16px rgba(0, 0, 0, 0.75);
-}
+`;
 
-.register__form {
+export const RegisterForm = styled(Form)`
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
+`;
 
-.register__form input {
+export const RegisterInput = styled(Field)`
   padding: 10px 20px 10px 20px;
   margin: 15px;
-  border: 0;
+  border: ${(props) => props.border};
   border-radius: 10px;
-}
+`;
 
-.register__form input.error {
-  border: 4px solid var(--theme-body-bg);
-}
-
-.errors__ {
-  color: var(--theme-body-bg);
+export const RegisterError = styled(ErrorMessage)`
   font-size: 10px;
-}
+`;

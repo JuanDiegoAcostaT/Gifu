@@ -1,17 +1,22 @@
 import React from "react";
-import "./styles.css";
-import { Link } from "@reach/router";
 import Fav from "../Fav/index";
+import {
+  GifButtons,
+  GifComponent,
+  GifLink,
+  GifTitle,
+  GifVideo,
+} from "./styles";
 
-function Gif({ title, mp4, id }) {
+function Gif({ title, mp4, id, index }) {
   return (
-    <div className="Gif">
-      <div className="Gif__buttons">
+    <GifComponent index={index}>
+      <GifButtons>
         <Fav id={id}></Fav>
-      </div>
-      <Link to={`/gif/${id}`} className="Gif-link">
-        <h4>{title}</h4>
-        <video
+      </GifButtons>
+      <GifLink to={`/gif/${id}`}>
+        <GifTitle data-comp="litem">{title}</GifTitle>
+        <GifVideo
           autoPlay
           loop
           muted
@@ -20,8 +25,8 @@ function Gif({ title, mp4, id }) {
           loading="lazy"
           type="video/mp4"
         />
-      </Link>
-    </div>
+      </GifLink>
+    </GifComponent>
   );
 }
 

@@ -4,7 +4,7 @@ import Login from "../../components/Login/index";
 
 export default function LoginPage() {
   return (
-    <div className="login__title">
+    <section>
       <h2>Login</h2>
       <Login />
       <p>
@@ -14,6 +14,6 @@ export default function LoginPage() {
           <br /> Sign Up
         </Link>
       </p>
-    </div>
+    </section>
   );
 }

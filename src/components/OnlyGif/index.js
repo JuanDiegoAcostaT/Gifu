@@ -1,5 +1,14 @@
 import React from "react";
-import "./styles.css";
+import {
+  GifButtons,
+  OnlyGifComponent,
+  GifDetails,
+  GifInfo,
+  GifSpan,
+  GifVideo,
+  GifTitle
+} from "./styles";
+import Fav from "../Fav/index";
 
 export default function OnlyGif({
   title,
@@ -11,28 +20,30 @@ export default function OnlyGif({
   mp4,
 }) {
   return (
-    <>
-      <div className="onlyGif" key={id}>
-        <h3>{title}</h3>
-        <div className="gif__info">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            src={mp4}
-            loading="lazy"
-            type="video/mp4"
-          />
-          <div className="gif__details">
-            <span>{rating}</span>
-            <span>{id}</span>
-            <span>{bitly_gif_url}</span>
-            <span>{import_datetime}</span>
-            <span>{slug}</span>
-          </div>
-        </div>
-      </div>
-    </>
+    <OnlyGifComponent key={id}>
+      <GifInfo>
+        <GifTitle>{title}</GifTitle>
+        <GifVideo
+          autoPlay
+          loop
+          muted
+          playsInline
+          src={mp4}
+          loading="lazy"
+          type="video/mp4"
+        />
+        <GifDetails>
+          <GifSpan>{rating}</GifSpan>
+          <GifSpan>{id}</GifSpan>
+          <GifSpan>{bitly_gif_url}</GifSpan>
+          <GifSpan>{import_datetime}</GifSpan>
+          <GifSpan>{slug}</GifSpan>
+        </GifDetails>
+        <GifButtons>
+          <Fav id={id}></Fav>
+          <button style={{marginLeft: "20px" }} >Compartir</button>
+        </GifButtons>
+      </GifInfo>
+    </OnlyGifComponent>
   );
 }

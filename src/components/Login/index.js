@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "@reach/router";
 import useUser from "../../hooks/useUser";
-import "./styles.css";
-import ButtonComponent from '../../components/Button/index'
+import ButtonComponent from "../../components/Button/index";
+import {
+  LoginContainer,
+  LoginForm,
+  LoginFormContainer,
+  LoginInput,
+} from "./styles";
 
 export default function Login({ onLogin }) {
   const navigate = useNavigate();
@@ -31,35 +36,35 @@ export default function Login({ onLogin }) {
   };
 
   return (
-    <div className="conatiner__form--login">
+    <LoginFormContainer>
       {isError && <strong>User or Password are invalid.</strong>}
       {isLoginLoading && <strong>Checking Credentials....</strong>}
       {!isLoginLoading && (
-        <div className="login__container">
-          <form className="login__form" onSubmit={handleSubmit}>
+        <LoginContainer>
+          <LoginForm onSubmit={handleSubmit}>
             <label htmlFor="username">User</label>
-            <input
+            <LoginInput
               id="username"
               required
               onChange={handleUsername}
               type="text"
               placeholder="username"
               value={username}
-            ></input>
+            ></LoginInput>
             <label htmlFor="password">Password</label>
-            <input
+            <LoginInput
               id="password"
               required
               onChange={handlePassword}
               type="password"
               placeholder="password"
               value={password}
-            ></input>
+            ></LoginInput>
             <ButtonComponent>Login</ButtonComponent>
             {isLogged && <p>you successfully logged in 💚</p>}
-          </form>
-        </div>
+          </LoginForm>
+        </LoginContainer>
       )}
-    </div>
+    </LoginFormContainer>
   );
 }
