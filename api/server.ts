@@ -24,7 +24,6 @@ const router = new Router()
 
 app.use(userMiddleware, oakCors())
 
-
 router
   .get('/favs', authMiddleware, getFavs)
   .delete("/favs/:id", authMiddleware, deleteFav)
