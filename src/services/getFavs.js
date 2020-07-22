@@ -1,4 +1,4 @@
-const ENDPOINT = "http://localhost:3000";
+const ENDPOINT = "http://localhost:4000";
 
 export default function getFavs({ jwt }) {
 

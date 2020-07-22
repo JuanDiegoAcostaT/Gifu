@@ -1,8 +1,8 @@
 const ENDPOINT = "http://localhost:4000";
 
-export default function addFav({ id, jwt }) {
+export default function deleteFav({ id, jwt }) {
   const requestOptions = {
-    method: "POST",
+    method: "DELETE",
     headers: {
       "Content-Type": "application/json",
     },

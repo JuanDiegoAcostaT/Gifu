@@ -21,6 +21,7 @@ export default function TopBar() {
 
   return (
     <GifHeader>
+      <GifLink to="/favs">Favorites</GifLink>
       <Match path="//:(login|register)">
         {(props) => (props.match ? null : content)}
       </Match>

@@ -23,6 +23,7 @@ export  function useSingleGif ({ id }) {
         }).catch(err => {
           setIsLoading(false)
           setIsError(true)
+          console.log(err)
         })
     }
   }, [gif, id])

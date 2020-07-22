@@ -2,7 +2,6 @@ import React from "react";
 import ListOfGifs from '../../components/ListOfGifs'
 import SearchForm from "../../components/SearchForm/index";
 import TrendingSearches from "../../components/TrendingSearches/index";
-import "../../globalStyles/styles.css";
 import { useGifs } from "../../hooks/useGifs";
 import { Helmet } from "react-helmet";
 
