@@ -22,7 +22,7 @@
 
 - ServiceWorker
 
-I invite you to visit it https://ratagram.now.sh
+I invite you to visit it https://gifu.vercel.app/
 
 <img src="https://i.imgur.com/nTXoLiH.png"/>
 
